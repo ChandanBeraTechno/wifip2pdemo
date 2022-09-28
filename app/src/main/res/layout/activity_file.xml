@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvAvailableDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="19dp"
+        android:text="Available Device"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDevicesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAvailableDevices"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        tools:layout_height="150dp"
+        tools:listitem="@layout/device_list_item" />
+
+    <TextView
+        android:id="@+id/tvSendOrReceive"
+        android:layout_below="@+id/rvDevicesList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="19dp"
+        android:text="Sending"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/btnSend"
+        android:layout_below="@+id/rvDevicesList"
+        android:layout_toRightOf="@+id/tvSendOrReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="19dp"
+        android:text="Open Gallery"
+        android:visibility="visible"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSendingFilesList"
+        android:layout_below="@+id/tvSendOrReceive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        tools:listitem="@layout/file_list_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReceivingFilesList"
+        android:layout_below="@+id/tvSendOrReceive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/file_list_item" />
+
+
+
+</RelativeLayout>
